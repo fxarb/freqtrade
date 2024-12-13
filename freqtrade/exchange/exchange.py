@@ -1816,7 +1816,7 @@ class Exchange:
             if tickers:
                 return tickers
         try:
-            tickers = self._api.fetch_tickers(symbols)
+            tickers = self._api.fetch_tickers(symbols, params={'code': 'USDC'})
             with self._cache_lock:
                 self._fetch_tickers_cache["fetch_tickers"] = tickers
             return tickers
